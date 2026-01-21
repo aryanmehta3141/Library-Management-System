@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Fines - Library Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-toggle" onclick="toggleMobileMenu()">☰</button>
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>📚 Library System</h2>
+                <p>Admin Dashboard</p>
+            </div>
+            <nav class="nav-menu">
+                <a href="dashboard.html" class="nav-item">🏠 Dashboard</a>
+                <a href="add-book.html" class="nav-item">➕ Add Book</a>
+                <a href="add-student.html" class="nav-item">👤 Add Student</a>
+                <a href="issue-book.html" class="nav-item">📤 Issue Book</a>
+                <a href="return-book.html" class="nav-item">📥 Return Book</a>
+                <a href="display-books.html" class="nav-item">📚 All Books</a>
+                <a href="issued-books.html" class="nav-item">📋 Issued Books</a>
+                <a href="next-date.html" class="nav-item">📅 Next Available</a>
+                <a href="all-fines.html" class="nav-item">💰 All Fines</a>
+                <a href="student-fines.html" class="nav-item active">🔍 Student Fines</a>
+                <a href="pay-fine.html" class="nav-item">💳 Pay Fine</a>
+            </nav>
+            <button class="logout-btn" onclick="logout()">🚪 Logout</button>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="page-header">
+                <h2>View Student Fines</h2>
+                <p>Check fines for a specific student</p>
+            </div>
+            
+            <div class="card">
+                <form id="studentFinesForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Student ID</label>
+                            <input type="text" id="fineStudentId" placeholder="S001" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Check Fines</button>
+                </form>
+                
+                <div id="studentFinesResult" style="margin-top: 20px; display: none;">
+                    <h3 style="margin-bottom: 15px; color: #1f2937;">Fine Details:</h3>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Book ID</th>
+                                    <th>Book Name</th>
+                                    <th>Days Overdue</th>
+                                    <th>Fine Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody id="studentFinesBody">
+                                <!-- Will be populated dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div style="margin-top: 15px; padding: 15px; background: #fef3c7; border-left: 4px solid #f59e0b; border-radius: 10px;">
+                        <strong>Total Fine: <span id="totalStudentFine">₹0</span></strong>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

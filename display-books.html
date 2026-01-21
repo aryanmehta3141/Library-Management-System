@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Books - Library Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-toggle" onclick="toggleMobileMenu()">☰</button>
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>📚 Library System</h2>
+                <p>Admin Dashboard</p>
+            </div>
+            <nav class="nav-menu">
+                <a href="dashboard.html" class="nav-item">🏠 Dashboard</a>
+                <a href="add-book.html" class="nav-item">➕ Add Book</a>
+                <a href="add-student.html" class="nav-item">👤 Add Student</a>
+                <a href="issue-book.html" class="nav-item">📤 Issue Book</a>
+                <a href="return-book.html" class="nav-item">📥 Return Book</a>
+                <a href="display-books.html" class="nav-item active">📚 All Books</a>
+                <a href="issued-books.html" class="nav-item">📋 Issued Books</a>
+                <a href="next-date.html" class="nav-item">📅 Next Available</a>
+                <a href="all-fines.html" class="nav-item">💰 All Fines</a>
+                <a href="student-fines.html" class="nav-item">🔍 Student Fines</a>
+                <a href="pay-fine.html" class="nav-item">💳 Pay Fine</a>
+            </nav>
+            <button class="logout-btn" onclick="logout()">🚪 Logout</button>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="page-header">
+                <h2>All Books</h2>
+                <p>Complete library book inventory</p>
+            </div>
+            
+            <div class="card">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Book ID</th>
+                                <th>Book Name</th>
+                                <th>Author</th>
+                                <th>Total Copies</th>
+                                <th>Issued</th>
+                                <th>Available</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="booksTableBody">
+                            <!-- Sample data - will be populated from books.txt via backend -->
+                            <tr>
+                                <td>B001</td>
+                                <td>Data Structures and Algorithms</td>
+                                <td>John Smith</td>
+                                <td>5</td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td><span class="status-badge status-available">Available</span></td>
+                            </tr>
+                            <tr>
+                                <td>B002</td>
+                                <td>Operating Systems Concepts</td>
+                                <td>Jane Doe</td>
+                                <td>3</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td><span class="status-badge status-issued">Fully Issued</span></td>
+                            </tr>
+                            <tr>
+                                <td>B003</td>
+                                <td>Computer Networks</td>
+                                <td>Robert Brown</td>
+                                <td>4</td>
+                                <td>1</td>
+                                <td>3</td>
+                                <td><span class="status-badge status-available">Available</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

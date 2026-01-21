@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issued Books - Library Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-toggle" onclick="toggleMobileMenu()">☰</button>
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>📚 Library System</h2>
+                <p>Admin Dashboard</p>
+            </div>
+            <nav class="nav-menu">
+                <a href="dashboard.html" class="nav-item">🏠 Dashboard</a>
+                <a href="add-book.html" class="nav-item">➕ Add Book</a>
+                <a href="add-student.html" class="nav-item">👤 Add Student</a>
+                <a href="issue-book.html" class="nav-item">📤 Issue Book</a>
+                <a href="return-book.html" class="nav-item">📥 Return Book</a>
+                <a href="display-books.html" class="nav-item">📚 All Books</a>
+                <a href="issued-books.html" class="nav-item active">📋 Issued Books</a>
+                <a href="next-date.html" class="nav-item">📅 Next Available</a>
+                <a href="all-fines.html" class="nav-item">💰 All Fines</a>
+                <a href="student-fines.html" class="nav-item">🔍 Student Fines</a>
+                <a href="pay-fine.html" class="nav-item">💳 Pay Fine</a>
+            </nav>
+            <button class="logout-btn" onclick="logout()">🚪 Logout</button>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="page-header">
+                <h2>Issued Books</h2>
+                <p>Currently issued books and their due dates</p>
+            </div>
+            
+            <div class="card">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Student ID</th>
+                                <th>Student Name</th>
+                                <th>Book ID</th>
+                                <th>Book Name</th>
+                                <th>Issue Date</th>
+                                <th>Due Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="issuedBooksBody">
+                            <!-- Sample data - will be populated from backend -->
+                            <tr>
+                                <td>S001</td>
+                                <td>Alice Johnson</td>
+                                <td>B001</td>
+                                <td>Data Structures</td>
+                                <td>2026-01-05</td>
+                                <td>2026-01-19</td>
+                                <td><span class="status-badge status-available">On Time</span></td>
+                            </tr>
+                            <tr>
+                                <td>S002</td>
+                                <td>Bob Smith</td>
+                                <td>B002</td>
+                                <td>Operating Systems</td>
+                                <td>2026-01-01</td>
+                                <td>2026-01-15</td>
+                                <td><span class="status-badge status-issued">Overdue</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

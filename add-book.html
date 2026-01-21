@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Book - Library Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-toggle" onclick="toggleMobileMenu()">☰</button>
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>📚 Library System</h2>
+                <p>Admin Dashboard</p>
+            </div>
+            <nav class="nav-menu">
+                <a href="dashboard.html" class="nav-item">🏠 Dashboard</a>
+                <a href="add-book.html" class="nav-item active">➕ Add Book</a>
+                <a href="add-student.html" class="nav-item">👤 Add Student</a>
+                <a href="issue-book.html" class="nav-item">📤 Issue Book</a>
+                <a href="return-book.html" class="nav-item">📥 Return Book</a>
+                <a href="display-books.html" class="nav-item">📚 All Books</a>
+                <a href="issued-books.html" class="nav-item">📋 Issued Books</a>
+                <a href="next-date.html" class="nav-item">📅 Next Available</a>
+                <a href="all-fines.html" class="nav-item">💰 All Fines</a>
+                <a href="student-fines.html" class="nav-item">🔍 Student Fines</a>
+                <a href="pay-fine.html" class="nav-item">💳 Pay Fine</a>
+            </nav>
+            <button class="logout-btn" onclick="logout()">🚪 Logout</button>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="page-header">
+                <h2>Add New Book</h2>
+                <p>Register a new book in the library system</p>
+            </div>
+            
+            <div class="card">
+                <div class="alert alert-success" id="addBookAlert"></div>
+                <form id="addBookForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Book ID</label>
+                            <input type="text" id="bookId" placeholder="B001" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Book Name</label>
+                            <input type="text" id="bookName" placeholder="Enter book title" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Author Name</label>
+                            <input type="text" id="authorName" placeholder="Enter author name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Total Copies</label>
+                            <input type="number" id="totalCopies" min="1" placeholder="5" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Book to Library</button>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

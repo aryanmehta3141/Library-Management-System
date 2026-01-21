@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Fines - Library Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-toggle" onclick="toggleMobileMenu()">☰</button>
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>📚 Library System</h2>
+                <p>Admin Dashboard</p>
+            </div>
+            <nav class="nav-menu">
+                <a href="dashboard.html" class="nav-item">🏠 Dashboard</a>
+                <a href="add-book.html" class="nav-item">➕ Add Book</a>
+                <a href="add-student.html" class="nav-item">👤 Add Student</a>
+                <a href="issue-book.html" class="nav-item">📤 Issue Book</a>
+                <a href="return-book.html" class="nav-item">📥 Return Book</a>
+                <a href="display-books.html" class="nav-item">📚 All Books</a>
+                <a href="issued-books.html" class="nav-item">📋 Issued Books</a>
+                <a href="next-date.html" class="nav-item">📅 Next Available</a>
+                <a href="all-fines.html" class="nav-item active">💰 All Fines</a>
+                <a href="student-fines.html" class="nav-item">🔍 Student Fines</a>
+                <a href="pay-fine.html" class="nav-item">💳 Pay Fine</a>
+            </nav>
+            <button class="logout-btn" onclick="logout()">🚪 Logout</button>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="page-header">
+                <h2>All Fines</h2>
+                <p>Outstanding fines across all students (₹10 per day overdue)</p>
+            </div>
+            
+            <div class="card">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Student ID</th>
+                                <th>Student Name</th>
+                                <th>Book ID</th>
+                                <th>Book Name</th>
+                                <th>Days Overdue</th>
+                                <th>Fine Amount</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="allFinesBody">
+                            <!-- Sample data - will be calculated from backend -->
+                            <tr>
+                                <td>S003</td>
+                                <td>Bob Wilson</td>
+                                <td>B005</td>
+                                <td>Database Systems</td>
+                                <td>5</td>
+                                <td>₹50</td>
+                                <td><span class="status-badge status-issued">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <td>S007</td>
+                                <td>Emma Davis</td>
+                                <td>B012</td>
+                                <td>Software Engineering</td>
+                                <td>12</td>
+                                <td>₹120</td>
+                                <td><span class="status-badge status-issued">Pending</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
